@@ -53,7 +53,7 @@ get_header();?>
                 <div class="col-md-12 text-center">
                     <div class="section-title">
                         <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>">
-                        <h4>Welcome to Liton Eco Tour, Bangladesh</h4>
+                        <h4>Best Tourist Guide in Bangladesh – Liton Eco tour</h4>
                         <p>As an experienced tour operator, we offer unforgettable adventures through the breathtaking Sundarban Mangroves forest.<br/>
 Now possible with us photography Tour in Bangladesh .  capture every magical moment.</p>
                     </div>
@@ -69,7 +69,7 @@ Now possible with us photography Tour in Bangladesh .  capture every magical m
                 <div class="col-md-8">
                     <div class="about-content">
                         <h4 class="page-title">Why Choose Liton Eco Tour</h4>
-                        <p>We are an experienced tour operator specializing in tours of the Sundarbans Mangrove Forest, Archaeological sites, Photography tours, Srimangal, Sylhet, the Chittagong Hill Tracts, Rangamati, Barisal Backwater trips, Tanguar Haor, Birisiri, Dhaka, and other locations across Bangladesh. With 20+ years of experience organizing tours for international visitors, we offer a truly authentic and enriching experience in Bangladesh.</p>
+                        <p>For those looking to explore the country's vibrant culture, breathtaking nature, and hidden treasures, LitonEcotour stands out as the best tourist guide in Bangladesh. When planning a trip to Bangladesh, one of the most crucial decisions you'll make is choosing the right guide to enhance your travel experience. Whether you're a solo traveler, a couple on a romantic getaway, or a group of adventurers, LitonEcotour provides personalized, authentic, and sustainable travel experiences across the country</p>
                         <p>Visit Bangladesh with Liton Eco Tours for an unforgettable adventure!</p>
                         <div class="row">
                             <div class="col-md-6">
@@ -79,6 +79,8 @@ Now possible with us photography Tour in Bangladesh .  capture every magical m
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>No Hidden Fees:</b> What we quote is what you pay—transparency is our priority.</li>
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Local Company, Local People:</b> We are a local business, supporting local communities, and our team is made up of knowledgeable locals.</li>
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Comfortable and Hassle-Free Tours:</b> We focus on your comfort so you can enjoy the journey stress-free.</li>
+                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Locally Owned and Operated:</b> LitonEcotour is a proudly local company led by Liton Das, a passionate ecotourism expert and licensed guide with over 15 years of experience. His deep knowledge of Bangladesh's culture, history, and ecology makes every trip not just a journey—but a story worth telling</li>
+                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Tailor-Made Tours:</b> Every traveler is different, and LitonEcotour understands that. Whether you're interested in wildlife photography, tribal village experiences, river cruises, or UNESCO heritage sites, your itinerary will be custom-built to fit your needs. This level of personalization is what makes LitonEcotour the best tourist guide in Bangladesh.</li>
                                 </ul>
                             </div>
                             <div class="col-md-6">
@@ -87,6 +89,8 @@ Now possible with us photography Tour in Bangladesh .  capture every magical m
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Discover New Places, New People:</b> Explore different ways of life and discover the hidden gems of Bangladesh.</li>
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Best Price, Best Service:</b> We strive to offer competitive prices without compromising on quality.</li>
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Experienced Tour Guides:</b> Our guides are passionate, professional and experienced, ensuring you get the most out of your trip.</li>
+                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Experienced Tour Guides:</b> Our guides are passionate, professional and experienced, ensuring you get the most out of your trip.</li>
+                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Top-Rated Ecotourism Services:</b> Recognized by international and local travelers alike, LitonEcotour offers environmentally responsible tours that support local communities. From the Sundarbans to Sylhet, you’ll get to explore places many tourists miss—while leaving a positive impact.</li>
                                 </ul>
     
                             </div>
@@ -95,6 +99,30 @@ Now possible with us photography Tour in Bangladesh .  capture every magical m
                 </div>
             </div>
         </div>  
+    </section>
+
+    <section class="service-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="single-feature">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>">
+                        <h4>Locally Owned and Operated</h4>
+                        <p>LitonEcotour is a proudly local company led by Liton Das, a passionate ecotourism expert and licensed guide with over 15 years of experience. His deep knowledge of Bangladesh's culture, history, and ecology makes every trip not just a journey—but a story worth telling.</p>
+                    </div>
+                    <div class="single-feature">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>">
+                        <h4>Top-Rated Ecotourism Services</h4>
+                        <p>Recognized by international and local travelers alike, LitonEcotour offers environmentally responsible tours that support local communities. From the Sundarbans to Sylhet, you’ll get to explore places many tourists miss—while leaving a positive impact.</p>
+                    </div>
+                    <div class="single-feature">
+                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>">
+                        <h4>Tailor-Made Tours</h4>
+                        <p>Every traveler is different, and LitonEcotour understands that. Whether you're interested in wildlife photography, tribal village experiences, river cruises, or UNESCO heritage sites, your itinerary will be custom-built to fit your needs. This level of personalization is what makes LitonEcotour the best tourist guide in Bangladesh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="services-area" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/services-bg.jpg');">
@@ -255,7 +283,8 @@ the_post_thumbnail( 'medium', array( 'alt' => $alt ) ); ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h4>Traveling is not a luxury, it's a necessity.</h4>
+                    <h5>Traveling is not a luxury, it's a necessity.</h5>
+                    <h4>If you want a travel experience that goes beyond just sightseeing and helps you connect deeply with the land and its people, LitonEcotour is the best tourist guide in Bangladesh. Explore the country the responsible, meaningful, and memorable way—with a guide who truly cares.</h4>
                      <a href="https://litonecotour.com/our-tours/">View All Tours</a>
                     <a href="https://litonecotour.com/contact-us/">Contact Now</a>
                 </div>

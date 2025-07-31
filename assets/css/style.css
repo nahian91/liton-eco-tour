@@ -645,10 +645,11 @@ top: 5px;
 	z-index: -1;
 }
 .cta-area h4 {
-  font-size: 50px;
-  text-transform: capitalize;
-  font-weight: 600;
-  margin-bottom: 30px;
+	font-size: 24px;
+	text-transform: capitalize;
+	font-weight: 500;
+	margin: 30px 0;
+	line-height: 36px;
 }
 .cta-area a {
   display: inline-block;
@@ -771,4 +772,48 @@ img.wptripadvisor_t1_tripadvisor_logo {
 }
 .site-main .package-meta {
 	flex-direction: row;
+}
+
+.single-blog {
+  border: 1px solid #ddd;
+}
+.single-blog img {
+  width: 100%;
+}
+.blog-content {
+  padding: 15px;
+}
+.blog-content h4 a {
+  font-size: 22px;
+  line-height: 32px;
+  color: #123;
+  font-weight: 500;
+}
+.blog-content .meta {
+  margin-bottom: 15px;
+}
+.blog-content a {
+  text-transform: capitalize;
+  transition: .3s;
+}
+.blog-content a:hover {
+  color: #1d9b04;
+}
+
+
+.wp-block-heading {
+  font-weight: 600;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.wp-block-image.size-full img {
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+.wp-block-image.size-full {
+}
+h2.wp-block-heading {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 20px;
 }

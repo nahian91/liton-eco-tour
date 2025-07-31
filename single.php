@@ -31,11 +31,20 @@
 					<div class="sidebar">
 						<h4>Our Exclusive Tours</h4>
 						<ul>
-							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
-							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
-							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
-							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
-							<li><a href=""><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Sundarban tour in Bangladesh</a></li>
+						<?php 
+							$args = array(
+								'post_type' => 'tours',
+								'posts_per_page' => -1,
+								'order' => 'ASC'
+							);
+							$query = new WP_Query($args);
+							while($query->have_posts()) {
+								$query->the_post();
+						?>
+							<li><a href="<?php the_permalink();?>"><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> <?php the_title();?></a></li>
+						<?php 
+							}
+						?>
 						</ul>
 					</div>
 				</div>

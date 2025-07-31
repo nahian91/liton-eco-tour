@@ -1,329 +1,77 @@
 <?php get_header();?>
-
-    <div class="slider-area">
-        <div class="carousel slide" id="carouselExampleIndicators" data-bs-ride="carousel">
-            <div class="carousel-inner">
-            <?php 
-                    $args = array(
-                        'post_type' => 'sliders',
-                        'posts_per_page' => -1,
-                        'order' => 'ASC'
-                    );
-                    $query = new WP_Query($args);
-                    $i = 0;
-                    while($query->have_posts()) {
-                        $query->the_post();
-                        $i++;
-                        $slider_btn_text = get_field( "button_text" );
-                        $slider_btn_url = get_field( "button_url" );
-                    ?>
-                        <div class="carousel-item <?php if($i == 1) {echo ' active';}?>">
-                            <img src="<?php the_post_thumbnail_url();?>" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h4><?php the_title();?></h4>
-                                <a href="<?php echo $slider_btn_url;?>"><?php echo $slider_btn_text;?></a>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                ?>
-
+    <section class="breadcumb bg" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/breadcumb.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4 class="breadcumb-title">Blogs</h4>
+                    <ul class="breadcumb-nav">
+                        <li class="breadcumb-list"><a href="<?php echo site_url();?>" class="breadcumb-link">Home</a></li>
+                        <li class="breadcumb-list">Blogs</li>
+                    </ul>
+                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
         </div>
-    
+    </section>
+
+    <section class="blog-area blog-page pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <?php
+            $args = array(
+                'post_type'      => 'post',
+                'posts_per_page' => 9,
+                'paged'          => get_query_var('paged') ? get_query_var('paged') : 1
+            );
+
+            $blog_query = new WP_Query($args);
+
+            if ($blog_query->have_posts()) :
+                while ($blog_query->have_posts()) : $blog_query->the_post();
+            ?>
+                <div class="col-md-4">
+                    <div class="single-blog">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <img class="w-100" src="<?php the_post_thumbnail_url('medium_large'); ?>" alt="<?php the_title(); ?>">
+                        <?php endif; ?>
+                        <div class="blog-content">
+                            <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                            <div class="meta">
+                                <a href=""><?php echo get_the_date('d M'); ?></a>
+                                <a href=""><?php echo get_the_date('Y'); ?></a>
+                            </div>
+                            <p><?php echo wp_trim_words(get_the_excerpt(), 20); ?></p>
+                            <a href="<?php the_permalink(); ?>" class="box-btn">read more</a>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+                echo '<p>No posts found.</p>';
+            endif;
+            ?>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row mt-5">
+            <div class="col-xxl-12">
+                <nav>
+                    <ul class="pagination d-flex justify-content-center">
+                        <?php
+                        echo paginate_links(array(
+                            'total'   => $blog_query->max_num_pages,
+                            'current' => max(1, get_query_var('paged')),
+                            'prev_text' => __('« Previous'),
+                            'next_text' => __('Next »'),
+                        ));
+                        ?>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
+</section>
 
-    <section class="about-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="">
-                        <h4>Welcome to Liton Eco Tour, Bangladesh</h4>
-                        <p>We are an experienced tour operator organizing tours in Sundarban Mangroves forest,</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="about-img">
-                        <img class="img-fluid border" src="<?php echo get_template_directory_uri();?>/assets/img/about.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="about-content">
-                        <h4 class="page-title">Why Choose Liton Eco Tour</h4>
-                        <p>We are an experienced tour operator organizing tours in Sundarban Mangroves forest, Archeological Sites tour , Photography Tour , Srimangal, Sylhet, Chittagong Hill Tracts , Rangamati ,Barisal Backwater trip, Tanguar Haor and Birisir area, Dhaka, and all the other areas in Bangladesh. We have long experience in organizing tours for foreigners in Bangladesh. Visit Bangladesh with Liton Eco Tours for an amazing Bangladesh experience!</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Book with a brand you Trust</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> 16 year's Experience</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Everything well Organized</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> No Hidden fees</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Local company , local people</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> See more,do more, enjoy more .... the beautiful Bangladesh .</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Comfortable and hassle free tour</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Many locals involve with Liton Eco Tour</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Everything well Organized</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Discover new place new people , explore different ways of life.</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Best price and best service</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Experienced tour Guides</li>
-                                </ul>
-    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>  
-    </section>
 
-    <section class="services-area" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/services-bg.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="">
-                        <h4>Bangladesh Information</h4>
-                        <p>Bangladesh has an approximate population density of 1,084 per square kilometer (2,808 per square mile). </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-1.png" alt="">
-                          <h4>Biography</h4>
-                          <p>Bangladesh, to the east of India on the Bay of Bengal, is a South Asian country marked by lush greenery.</p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-2.png" alt="">
-                          <h4>Map</h4>
-                          <p>The People's Republic of Bangladesh, is a country in South Asia and converges with South-east. </p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-3.png" alt="">
-                          <h4>Visa Information</h4>
-                          <p>Visa requirements for Bangladeshi citizens are administrative entry restrictions imposed on citizens of Bangladesh </p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-4.png" alt="">
-                          <h4>Foreign Mission</h4>
-                          <p>This is a list of diplomatic missions in Bangladesh. At present, the capital city of Dhaka hosts 46 </p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-5.png" alt="">
-                          <h4>History</h4>
-                          <p>Modern Bangladesh emerged as an independent nation in 1971 after breaking and achieving independence from Pakistan</p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-8.png" alt="">
-                          <h4>Geography and Climate</h4>
-                          <p>Bangladesh is a densely-populated, low-lying, mainly riverine country located in South Asia with a coastline of 580 km (360 mi). </p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-9.png" alt="">
-                          <h4>Weather</h4>
-                          <p>Straddling the Tropic of Cancer, Bangladesh's climate is tropical with a mild winter from October to March, and a hot. </p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-6.png" alt="">
-                          <h4>People & Culture</h4>
-                          <p>Bangladesh is ethnically homogeneous, with Bengalis comprising 98% of the population. Bangladesh is a Muslim-majority country.  </p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                       <!-- Single Service -->
-                       <div class="single-service">
-                          <img src="<?php echo get_template_directory_uri();?>/assets/img/services/service-icon-7.png" alt="">
-                          <h4>Airlines</h4>
-                          <p>Biman Bangladesh Airlines was established on 4 January 1972 as Bangladesh's national airline under the Bangladesh Biman. </p>
-                          <a href="<?php echo esc_url( get_page_link( 40 ) ); ?>">read more</a>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="packages-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="">
-                        <h4>Our TOUR</h4>
-                        <p>We have designed some interesting tour packages that you may like . Please see below.</p>
-                        <span>Note: we can make any customized tour for you on your request.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <?php 
-                    $args = array(
-                        'post_type' => 'tours',
-                        'posts_per_page' => 8,
-                        'order' => 'ASC'
-                    );
-
-                    $query = new WP_Query($args);
-
-                    while($query->have_posts()) {
-                        $query->the_post();
-                        $tour_place = get_field( "place" );
-                        $tour_duration = get_field( "duration" );
-                    ?>
-                        <div class="col-md-3">
-                            <div class="single-package">
-                                <?php the_post_thumbnail();?>
-                                <h4><?php the_title();?></h4>
-                                <div class="package-meta">
-                                    <span><i class="bx bx-map"></i> <?php echo $tour_place;?></span>
-                                    <span><i class="bx bxs-watch"></i> <?php echo $tour_duration;?></span>
-                                </div>
-                                <div class="package-btn">
-                                    <a href="<?php the_permalink();?>">View Details</a>
-                                    <a href="<?php echo esc_url( get_page_link( 47 ) ); ?>">Contact Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                ?>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <a href="<?php echo esc_url( get_page_link( 23 ) ); ?>" class="view-all-btn">View All Tours</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-area" style="background-image: url('<?php echo get_template_directory_uri();?>/assets/img/cta-bg.png');">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h4>Traveling is not a luxury, it's a necessity.</h4>
-                    <a href="<?php echo esc_url( get_page_link( 23 ) ); ?>">View All Tours</a>
-                    <a href="<?php echo esc_url( get_page_link( 47 ) ); ?>">Contact Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="service-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="">
-                        <h4>Our Services</h4>
-                        <p>We have awesome services that you may like . Please see below.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="services-list">
-                        <ul>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Package Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Customize Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Group Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Corporate Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Camping Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Trekking Tour</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-list">
-                        <ul>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Cycling Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Religious Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Festival Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Study Tour</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Train Tickets</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> English Speaking Guide Service</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="services-list">
-                        <ul>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Steamer Ticket</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> River Cruise</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Rent-A Car</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Hotel & Resort Booking</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> English Speaking Guide Service</li>
-                            <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt=""> Interpreter</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section class="testimonials-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <div class="section-title">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="">
-                        <h4>Client Reviews</h4>
-                        <p>Contact us/Liton Eco Tours Please write as much details as possible about the service you require.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="testimonials">
-                        <?php echo do_action( 'wprev_tripadvisor_plugin_action', 1 );?>
-                    </div>
-				</div>
-            </div>
-        </div>
-    </section>
 <?php get_footer();?>
