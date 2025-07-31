@@ -536,6 +536,7 @@ top: 5px;
   font-weight: 600;
   padding-bottom: 10px;
   margin-bottom: 30px;
+  line-height: 40px;
 }
 .page-title:after {
   position: absolute;
@@ -545,6 +546,21 @@ top: 5px;
   content: "";
   bottom: 0;
   left: 0;
+}
+
+.single-feature {
+  margin-bottom: 40px;
+}
+.single-feature:last-child {
+  margin-bottom: 0;
+}
+.single-feature h4 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.feature-list  li {
+  margin-bottom: 20px;
 }
 .pt-100{
   padding-top: 100px;

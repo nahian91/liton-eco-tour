@@ -101,25 +101,41 @@ Now possible with us photography Tour in Bangladesh .  capture every magical m
         </div>  
     </section>
 
-    <section class="service-area">
+    <section class="features-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-6">
+                    <h4 class="page-title">Why Choose LitonEcotour?</h4>
                     <div class="single-feature">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>">
                         <h4>Locally Owned and Operated</h4>
                         <p>LitonEcotour is a proudly local company led by Liton Das, a passionate ecotourism expert and licensed guide with over 15 years of experience. His deep knowledge of Bangladesh's culture, history, and ecology makes every trip not just a journey—but a story worth telling.</p>
                     </div>
                     <div class="single-feature">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>">
                         <h4>Top-Rated Ecotourism Services</h4>
                         <p>Recognized by international and local travelers alike, LitonEcotour offers environmentally responsible tours that support local communities. From the Sundarbans to Sylhet, you’ll get to explore places many tourists miss—while leaving a positive impact.</p>
                     </div>
                     <div class="single-feature">
-                        <img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>">
                         <h4>Tailor-Made Tours</h4>
                         <p>Every traveler is different, and LitonEcotour understands that. Whether you're interested in wildlife photography, tribal village experiences, river cruises, or UNESCO heritage sites, your itinerary will be custom-built to fit your needs. This level of personalization is what makes LitonEcotour the best tourist guide in Bangladesh.</p>
                     </div>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="page-title">Bangladesh’s Top Tour Guide: LitonEcotour</h4>
+                    <ul class="feature-list">
+                        <li><b>Licensed and Certified Guides:</b> All guides are professionally trained and government-certified.</li>
+                        <li><b>Eco-Conscious Travel:</b> Strong focus on sustainability, conservation, and ethical tourism.</li>
+                        <li><b>Multilingual Communication:</b> Fluent in English, Bengali, and several tribal languages.</li>
+                        <li><b>Excellent Reviews:</b> 5-star ratings on platforms like TripAdvisor, Google Reviews, and Lonely Planet mentions.</li>
+                        <li><b>Safe & Hassle-Free Experience:</b> From transportation to accommodations, everything is handled with care</li>
+                    </ul>
+                    <br>
+                    <h4 class="page-title">How to Book with LitonEcotour</h4>
+                    <ul class="feature-list">
+                        <li>Website: www.litonecotour.com</li>
+                        <li>Email: litondeb1983@yahoo.com</li>
+                        <li>Phone/WhatsApp: ( +88) 01710994099</li>
+                        <li>Facebook: https://www.facebook.com/litonecotours/</li>
+                    </ul>
                 </div>
             </div>
         </div>
