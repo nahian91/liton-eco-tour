@@ -79,7 +79,7 @@ Now possible with us photography Tour in Bangladesh .  capture every magical m
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>No Hidden Fees:</b> What we quote is what you pay—transparency is our priority.</li>
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Local Company, Local People:</b> We are a local business, supporting local communities, and our team is made up of knowledgeable locals.</li>
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Comfortable and Hassle-Free Tours:</b> We focus on your comfort so you can enjoy the journey stress-free.</li>
-                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Locally Owned and Operated:</b> LitonEcotour is a proudly local company led by Liton Das, a passionate ecotourism expert and licensed guide with over 15 years of experience. His deep knowledge of Bangladesh's culture, history, and ecology makes every trip not just a journey—but a story worth telling</li>
+                                    <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Locally Owned and Operated:</b> LitonEcotour is a proudly local company led by Liton Deb, a passionate ecotourism expert and licensed guide with over 15 years of experience. His deep knowledge of Bangladesh's culture, history, and ecology makes every trip not just a journey—but a story worth telling</li>
                                     <li><img src="<?php echo get_template_directory_uri();?>/assets/img/title-icon.png" alt="<?php the_title();?>"> <b>Tailor-Made Tours:</b> Every traveler is different, and LitonEcotour understands that. Whether you're interested in wildlife photography, tribal village experiences, river cruises, or UNESCO heritage sites, your itinerary will be custom-built to fit your needs. This level of personalization is what makes LitonEcotour the best tourist guide in Bangladesh.</li>
                                 </ul>
                             </div>
@@ -108,7 +108,7 @@ Now possible with us photography Tour in Bangladesh .  capture every magical m
                     <h4 class="page-title">Why Choose LitonEcotour?</h4>
                     <div class="single-feature">
                         <h4>Locally Owned and Operated</h4>
-                        <p>LitonEcotour is a proudly local company led by Liton Das, a passionate ecotourism expert and licensed guide with over 15 years of experience. His deep knowledge of Bangladesh's culture, history, and ecology makes every trip not just a journey—but a story worth telling.</p>
+                        <p>LitonEcotour is a proudly local company led by Liton Deb, a passionate ecotourism expert and licensed guide with over 15 years of experience. His deep knowledge of Bangladesh's culture, history, and ecology makes every trip not just a journey—but a story worth telling.</p>
                     </div>
                     <div class="single-feature">
                         <h4>Top-Rated Ecotourism Services</h4>
